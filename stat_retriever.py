@@ -24,6 +24,14 @@ def main():
     with open(stats_path, "w", newline="") as csvfile:
         writer = csv.writer(csvfile, dialect="excel")
 
+        # Add title row
+        writer.writerow(["ID", "Name", "Team ID", "Team Abbreviation",
+            "Age", "Height", "Height (Inches)", "Weight",
+            "College", "Country", "Draft Year", "Draft Round", "Draft Number",
+            "Games Played", "Points", "Rebounds", "Assists", "Net Rating",
+            "Offensive Rebound Percentage", "Defensive Rebound Percentage",
+            "Usage Percentage", "True Shooting Percentage", "Assist Percentage"])
+
         for row in stats["resultSets"][0]["rowSet"]:
             player_id = row[0]
             player_name = row[1]
